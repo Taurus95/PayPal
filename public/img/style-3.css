@@ -1,0 +1,334 @@
+@import url("bootstrap.css"); 
+@import url("normalize.css"); 
+
+/* Inicio Nuevos Estilos 2016 */
+
+.m01 {    
+    max-width: 900px !important;
+    margin: 1em auto 1em auto;
+    display: table;
+    float: none !important;
+    text-align: center;
+    }
+
+.m02 {    
+    max-width: 600px !important;
+    margin: 1em auto 1em auto;
+    display: table;
+    float: none !important;
+    text-align: center;
+    }
+
+.m03 {    
+    max-width: 500px !important;
+    margin: 1em auto 1em auto;
+    display: table;
+    float: none !important;
+    text-align: center;
+    }
+
+.over01 {width:100%; height:450px ;overflow:auto;}
+
+.active {color:#000 !important;}
+
+@use cssnext;
+
+:root {
+  --family1: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  --family2: 'Avenir Next', 'Segoe UI', 'Lucida Grande', sans-serif;
+  --yellow: #FFC842;
+  --break-sm: 32rem;
+  --break-md: 48rem;
+}
+
+@custom-media --only-small (width <= 32rem);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-weight: 400;
+  font-family: var(--family1);
+}
+
+
+td, th { padding: .5rem; }
+th { text-align: center; /*font-weight: 400;*/ font-size: .8rem; }
+td { /*font-family: var(--family2);*/ text-align: center; }
+
+.table-margen { max-width: 1200px !important;
+    margin: 1em auto 1em auto;
+    display: table;
+    float: none !important;
+    text-align: center;
+    }
+
+.table {
+  width: 100%;
+  padding: 1rem;
+}
+
+.table__heading { background: rgba(243,243,243,.85);}
+
+@media (--only-small) {
+  .table__heading { display: none; }
+  .table__content {
+    display: block;
+    padding: .5rem 0;
+  }
+  .table__row {
+    margin: .25rem 1rem;
+    padding: .5rem 0;
+    display: block;
+    border-bottom: 2px solid var(--yellow);
+  }
+  .table__content:before {
+    content: attr(data-heading);
+    display: inline-block;
+    width: 5rem;
+    margin-right: .5rem;
+    color: #999;
+    font-size: .75rem;
+    font-weight: 700;
+    font-family: var(--family1);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+}
+
+.contenido01 {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px #e4e4e4;
+    -moz-box-shadow: 0px 0px 20px #e4e4e4;
+    -webkit-box-shadow: 0px 0px 20px #e4e4e4;
+  }
+
+.titulos01 {    
+    background: linear-gradient(to bottom, #fff 0%, #e8e8e8 100%);
+    border: 1px solid #ddd !important;
+    text-align: center;
+    font-weight: 600;
+  }
+
+
+/* Fin Nuevos Estilos 2016 */
+
+.titulos {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+}
+
+
+.boton {
+  font-style: normal;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    border: 1px solid transparent;
+    color: #fff;
+    padding: 1px 5px;
+    border-radius: 3px;
+}
+
+.textos_destacados {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #999999;
+}
+.celda_titulo {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: capitalize;
+  background-color: #CCCCCC;
+  text-align: center;
+  vertical-align: middle;
+  color: #666666;
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: none;
+}
+.Celda_form {
+  color: #666666;
+  background-color: #F7F7F7;
+  padding-left: .8em;
+  border: 1px solid #CCCCCC;
+}
+.celda_casillas {
+  background-color: #CCCCCC;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+
+/**** MVC *****/
+body{
+  font-size: 14px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+
+}
+a {
+    text-decoration: underline;
+    color: #3399ff;
+}
+a:hover{
+  color: #A5A5A5;
+}
+h1 {
+    font-size: 1.4em;
+}
+#headlogo{
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+table.estilo01 tbody {
+  background: #000;
+}
+
+table.estilo01, table.estilo02{
+  max-width: 1250px;
+  min-width: 370px;
+  margin: 1em auto;
+  /*border-collapse: collapse;*/
+  /*overflow: hidden;*/
+  border: 1px solid #EAEAEA;
+  border-radius: 8px;
+  box-shadow: 0px 0px 20px #e4e4e4;
+  -webkit-box-shadow: 0px 0px 20px #e4e4e4; 
+}
+table.estilo01 tr:first-child, table.estilo02 tr:first-child{
+  text-align: center;
+  font-weight: bold;
+  background: linear-gradient(to bottom, #fff 0%, #e8e8e8 100%);
+  border: 1px solid #ddd !important; 
+}
+table.estilo01 tr, table.estilo02 tr{
+  background: #fff;
+  font-size: 14px;
+  text-align: left;
+}
+table.estilo01 td, table.estilo02 td{
+  padding: .5em;
+  
+}
+
+
+.coledit{
+    width: 20%;
+    text-align: center;
+}
+
+
+table.tareas, table.tareaSinEnc {  
+    margin: 0 AUTO;
+	border-collapse: separate;
+	border-spacing: 2px;
+}
+.tareas tr:first-child {
+  background: #EAEAEA !important;
+}
+.tareas tr:nth-child(2n+1), .tareaSinEnc tr:nth-child(2n+1), .estilo02 tr:nth-child(2n+1) {
+    background: #F7F7F7 ;
+}
+.tareas td{
+ 
+}
+
+table.tareaSinEnc {
+   border: 1px solid #EAEAEA;
+}
+table.tareaSinEnc tr:first-child{
+  text-align:  inherit;
+  font-weight:  inherit;
+  background:  #F7F7F7; 
+}
+
+
+.centrado-fila {
+	text-align: center!important;
+}
+
+.texto_Alerta {
+	color: #F00;
+	font-weight: bold;
+}
+
+.celda_nombre {
+	font-weight: bold;
+}
+
+ul.cajabuscador {
+    float: left;
+    min-width: 90px;
+    vertical-align: top;
+    list-style-type: none;
+    margin: .1em;
+}
+ul.cajabuscador .boton{
+  clear: both;
+  display: block;
+  margin: .5em;
+}
+ul.cajabuscador h1 {
+    font-size: 1em;
+    text-align: center;
+    background-color: #ddd;
+    width: 100%;
+}
+
+/*** Form ***/
+form{
+  clear: both;
+}
+
+#paginacion{
+	font-size: 1em;
+    margin: 1em auto;
+    display: block;
+    text-align: center;
+    width: 90%;
+}
+#paginacion a{
+    text-decoration: none;
+}
+#paginacion a:hover{
+    color: #8bc021;
+}
+
+.black_overlay {
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 150%;
+	background-color: #000000;
+	z-index: 1001;
+	-moz-opacity: 0.8;
+	opacity: .80;
+	filter: alpha(opacity=80);
+}
+
+.white_content {
+	display: none;
+	position: absolute;
+	top: 15%;
+	left: 25%;
+	width: 50%;
+	height: 30%;
+	padding: 16px;
+	border: 10px solid #FF0000;
+	background-color: #FFFFFF;
+	z-index: 1002;
+	overflow: auto;
+}
