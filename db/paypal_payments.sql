@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 04-06-2019 a las 15:43:44
+-- Tiempo de generación: 07-06-2019 a las 17:38:16
 -- Versión del servidor: 5.7.26
 -- Versión de PHP: 7.0.33-0+deb9u3
 
@@ -26,16 +26,22 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `paypal_payments`
 --
 
-DROP TABLE IF EXISTS `paypal_payments`;
 CREATE TABLE `paypal_payments` (
   `id` int(11) NOT NULL,
   `item_no` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `item_name` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `transaccion_id` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `payment_amount` float(10,2) NOT NULL,
+  `mc_fee` float(10,2) NOT NULL,
+  `total_amount` float(10,2) NOT NULL,
   `currency_code` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
   `payment_status` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `payer_email` varchar(255) COLLATE utf8_spanish_ci NOT NULL
+  `payer_email` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `contact_phone` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `first_name` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `last_name` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `receiver_email` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `payment_date` varchar(255) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --

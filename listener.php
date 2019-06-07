@@ -18,8 +18,6 @@ $log_file_dir = __DIR__ . "/logs";
 // Here is some information on how to configure sendmail:
 // http://php.net/manual/en/function.mail.php#118210
 
-
-
 $ipn = new PaypalIPN();
 if ($enable_sandbox) {
     $ipn->useSandbox();
@@ -57,54 +55,16 @@ if ($verified) {
         // Process IPN
         //saving the payment with the data of paypal
 
-        //check if the payment was with the correct informations
-        //session test
-        session_start();
-
-        //we get the id of the service or product that was payd from the session
-        //for test just another id//
-        $item_id_session = $_SESSION["item_id"];
-
-        //we go to the db looking for the total amount that should be payd
-        //just for test another amount
-        $amount_session = $_SESSION["item_amount"];
-
-        //we go to the db for the datails of the recent transaction
-        $stmt = $con->prepare("SELECT * FROM paypal_payments WHERE item_no=? ORDER BY item_no ASC
-        LIMIT 1");
-        //execute query
-        $stmt->execute(array($item_id_session));
-        $data = $stmt->fetchAll();
-
-        //compare data
-        if(sizeof($data)!=0){
-            foreach ($data as $value) {
-                if($value["payment_status"]=="Completed"){
-                    if($value["payment_amount"]==$amount){
-                        //here we check that the payment was for the correct amount
-
-                        //for change the state of the bil
-
-                        $_SESSION["payment_status"] = $value["payment_status"];
-                        $_SESSION["payment_amount"] = $value["payment_amount"];
-                        $_SESSION["item_name"] = $value["item_name"];
-                    }else{
-                        $_SESSION['message_error']="Error: El monto cancelado no corresponde al monto real.";
-                    }
-                }else{
-                    $_SESSION['message_error']="Error: La transaccion no se ha completado.";
-                }
-            }
-        }else{
-            $_SESSION['message_error']="Error: No se encontro registro de tal transaccion.";
-        }
-        //variables to add receiver_email ,contact_phone ,first_name ,last_name ,payment_date, mc_fee
+        //we rest for get the total on our paypal account
+        $total = floatval($_POST["mc_gross"])-floatval($_POST["mc_fee"]);
 
         $conection = new Connection();
         $stmt = $conection->prepare("INSERT INTO paypal_payments(item_no , item_name, transaccion_id,
-            payment_amount , currency_code, payment_status,payer_email) VALUES(?,?,?,?,?,?,?)");
-        $stmt->execute(array($_POST["item_number"],$_POST["item_name"],$_POST["txn_id"],$_POST["mc_gross"],
-        $_POST['mc_currency'] ,$_POST['payment_status'],$_POST['payer_email']));
+            payment_amount ,mc_fee,total_amount, currency_code, payment_status,payer_email,contact_phone,
+            first_name,last_name,receiver_email,payment_date) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $stmt->execute(array($_POST["item_number"],$_POST["item_name"],$_POST["txn_id"],$_POST["mc_gross"],$_POST["mc_fee"],
+        $total,$_POST['mc_currency'] ,$_POST['payment_status'],$_POST['payer_email'],$_POST['payer_status'],$_POST['first_name'],
+        $_POST['last_name'],$_POST['receiver_email'],$_POST['payment_date']));
 
         // This is an example for sending an automated email to the customer when they purchases an item for a specific amount:
         /*

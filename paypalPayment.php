@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <title>Pagos</title>
 
-    <link href="public/css/boostrap.css" rel="stylesheet" type="text/css" />
+    <link href="public/css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="public/css/normalize.css" rel="stylesheet" type="text/css" />
     <link href="public/css/style.css" rel="stylesheet" type="text/css" />
     <link href="public/css/styleMenu.css" rel="stylesheet" type="text/css" />
@@ -13,6 +13,17 @@
 
     <?php include "env.php"; ?>
 </head>
+<?php
+//session for testing
+session_start();
+$_SESSION["total_amount"]=10;
+$_SESSION["item_name"]="Un par de weas";
+$_SESSION["item_number"]=178;
+$_SESSION["currency_code"]="USD";
+//fin
+?>
+
+
 
 <body>
     <!-- include menu on this project -->
@@ -34,17 +45,18 @@
                 <tbody>
                     <tr>
                         <td class="table__content">Monto a pagar:</td>
-                        <td class="table__content"><strong>$ 29.000</strong></td>
+                        <td class="table__content"><strong><?php echo isset($_SESSION['total_amount'])? $_SESSION['total_amount']:" "; ?>
+                        <?php echo isset($_SESSION['currency_code'])? $_SESSION['currency_code']:" "; ?></strong></td>
                     </tr>
 
                     <tr>
                         <td class="table__content">Descripcion:</td>
-                        <td class="table__content">Servicio mensual</td>
+                        <td class="table__content"><?php echo isset($_SESSION['item_name'])? $_SESSION['item_name']:" "; ?></td>
                     </tr>
 
                     <tr>
-                        <td class="table__content">titular:</td>
-                        <td class="table__content">andres.chacon-buyer@vinculo.cl</td>
+                        <td class="table__content">Orden de pago:</td>
+                        <td class="table__content"><?php echo isset($_SESSION['item_number'])? $_SESSION['item_number']:" "; ?></td>
                     </tr>
 
                 </tbody>
@@ -52,10 +64,10 @@
                 <input type="hidden" name="business" value="andres.chacon-facilitator@vinculo.cl">
 
                 <!-- Specify product details -->
-                <input type="hidden" name="item_name" value="Servicio mensual">
-                <input type="hidden" name="item_number" value="109">
-                <input type="hidden" name="amount" value="10">
-                <input type="hidden" name="currency_code" value="USD">
+                <input type="hidden" name="item_name" value="<?php echo isset($_SESSION['item_name'])? $_SESSION['item_name']:" "; ?>">
+                <input type="hidden" name="item_number" value="<?php echo isset($_SESSION['item_number'])? $_SESSION['item_number']:" "; ?>">
+                <input type="hidden" name="amount" value="<?php echo isset($_SESSION['total_amount'])? $_SESSION['total_amount']:" "; ?>">
+                <input type="hidden" name="currency_code" value="<?php echo isset($_SESSION['currency_code'])? $_SESSION['currency_code']:" "; ?>">
 
                 <!-- Return URLs -->
                 <input type='hidden' name='cancel_return' value='<?php echo getenv('PROYECT_CANCEL_URL'); ?>'>
