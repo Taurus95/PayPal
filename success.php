@@ -43,7 +43,7 @@ if(sizeof($data)!=0){
         }
     }
 }else{
-    $_SESSION['message_error']="Error: No se encontro registro de tal transaccion.";
+    $_SESSION['message_error']="Error: No se encontro registro de tal transaccion.".json_encode($data).$_SESSION["item_number"];
 }
 
 ?>
