@@ -130,7 +130,4 @@ if(sizeof($data)!=0){
 
     </div>
 </body>
-<?php
-session_destroy();
-?>
 </html>
