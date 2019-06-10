@@ -1,9 +1,9 @@
 <?php
 //session for testing
 session_start();
-$_SESSION["total_amount"]=100;
+$_SESSION["total_amount"]=10;
 $_SESSION["item_name"]="Un par de weas en euros";
-$_SESSION["item_number"]=120;
+$_SESSION["item_number"]=rand(1,1000);
 $_SESSION["currency_code"]="EUR";
 //fin
 ?>
