@@ -16,10 +16,10 @@
 <?php
 //session for testing
 session_start();
-$_SESSION["total_amount"]=10;
-$_SESSION["item_name"]="Un par de weas";
-$_SESSION["item_number"]=178;
-$_SESSION["currency_code"]="USD";
+$_SESSION["total_amount"]=100;
+$_SESSION["item_name"]="Un par de weas en euros";
+$_SESSION["item_number"]=120;
+$_SESSION["currency_code"]="EUR";
 //fin
 ?>
 
