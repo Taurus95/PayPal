@@ -1,3 +1,6 @@
+<<?php
+session_start();
+?>
 <!--DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"-->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <?php
@@ -7,7 +10,7 @@ require('./db/Connection.php');
 //comprobar que se hiso un pago correcto
 //check if the payment was with the correct informations
 //session test
-session_start();
+
 //new connection
 $conection = new Connection();
 $item_no = $_SESSION["item_number"];

@@ -1,3 +1,12 @@
+<?php
+//session for testing
+session_start();
+$_SESSION["total_amount"]=100;
+$_SESSION["item_name"]="Un par de weas en euros";
+$_SESSION["item_number"]=120;
+$_SESSION["currency_code"]="EUR";
+//fin
+?>
 <!--DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"-->
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -13,15 +22,7 @@
 
     <?php include "env.php"; ?>
 </head>
-<?php
-//session for testing
-session_start();
-$_SESSION["total_amount"]=100;
-$_SESSION["item_name"]="Un par de weas en euros";
-$_SESSION["item_number"]=120;
-$_SESSION["currency_code"]="EUR";
-//fin
-?>
+
 
 
 
