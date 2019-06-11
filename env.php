@@ -1,7 +1,6 @@
 <?php
   $variables = [
-
-      //URLs for payments
+      //URLS for payments
       'PAYPAL_URL' => 'https://www.sandbox.paypal.com/cgi-bin/webscr',
       'PROYECT_BASE_URL' => 'https://andres.c.c1.cl/PayPal',
       'PROYECT_SUCCESSE_URL' => 'https://andres.c.c1.cl/PayPal/success.php',
