@@ -1,6 +1,7 @@
 ---
 deployment:
   tasks:
+    - /bin/rm -Rf /home/andresc/www/PayPal
     - /bin/mkdir /home/andresc/www/PayPal
     - /bin/chmod 755 /home/andresc/www/PayPal
     - export DEPLOYPATH=/home/andresc/www/PayPal
