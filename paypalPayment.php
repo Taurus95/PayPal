@@ -4,7 +4,7 @@ session_start();
 $_SESSION["total_amount"]=10;
 $_SESSION["item_name"]="Un par de weas en euros";
 $_SESSION["item_number"]=rand(1,1000);
-$_SESSION["currency_code"]="EUR";
+$_SESSION["currency_code"]="USD";
 //fin
 ?>
 <!--DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"-->
