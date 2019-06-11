@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/andresc/public_html/PayPal
+    - /bin/cp -R * $DEPLOYPATH
+    - /bin/chmod -R 755 $DEPLOYPATH
