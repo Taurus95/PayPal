@@ -3,5 +3,5 @@ deployment:
   tasks:
     - /bin/mkdir /home/andresc/www/PayPal
     - export DEPLOYPATH=/home/andresc/www/PayPal
-    - /bin/cp -R /db /public PaypalIPN README.md cancelled.php env.php listener.php paypalPayment.php success.php $DEPLOYPATH
+    - /bin/cp -R * $DEPLOYPATH
     - /bin/chmod -R 755 $DEPLOYPATH
