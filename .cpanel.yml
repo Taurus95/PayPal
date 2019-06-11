@@ -4,6 +4,6 @@ deployment:
     - mkdir /home/andresc/www/PayPal
     - chmod 755 /home/andresc/www/PayPal
     - export DEPLOYPATH=/home/andresc/www/PayPal
-    - cp -R * $DEPLOYPATH
+    - cp -R cancelled.php db/ $DEPLOYPATH
     - chmod -R 755 $DEPLOYPATH
     
