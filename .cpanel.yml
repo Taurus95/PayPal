@@ -1,9 +1,9 @@
 ---
 deployment:
   tasks:
-    - mkdir /home/andresc/www/PayPal
-    - chmod 755 /home/andresc/www/PayPal
+    - /bin/mkdir /home/andresc/www/PayPal
+    - /bin/chmod 755 /home/andresc/www/PayPal
     - export DEPLOYPATH=/home/andresc/www/PayPal
-    - cp -R cancelled.php db/ $DEPLOYPATH
-    - chmod -R 755 $DEPLOYPATH
+    - /bin/cp -R cancelled.php db/ $DEPLOYPATH
+    - /bin/chmod -R 755 $DEPLOYPATH
     
