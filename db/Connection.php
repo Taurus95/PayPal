@@ -4,9 +4,9 @@
 class Connection extends PDO {
 
     protected $host = "localhost";
-    protected $dbname = "csolu4_clientes_andres";
-    protected $username = "root";
-    protected $password = "root19520";
+    protected $dbname = "andresc_paypal_payments";
+    protected $username = "andresc_admin";
+    protected $password = "admin19520";
 
     function __construct() {
         try {
