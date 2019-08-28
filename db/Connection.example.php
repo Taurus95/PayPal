@@ -1,16 +1,16 @@
 <?php
 
+include_once '../vendor/autoload.php';
+//cargamos variables de entorno
+$dotenv = Dotenv\Dotenv::create(__DIR__.'/../');
+$dotenv->load();
 
 class Connection extends PDO {
 
-    protected $host = "localhost";
-    protected $dbname = "andresc_paypal_payments";
-    protected $username = "root";
-    protected $password = "root19520";
-
     function __construct() {
         try {
-            parent::__construct('mysql:host='.$this->host.';dbname='.$this->dbname, $this->username, $this->password);
+            parent::__construct('mysql:host='.getenv('DB_HOST').';dbname='.getenv('DB_NAME'), getenv('DB_USER'),
+             getenv('DB_PASSWORD'));
             parent::setAttribute(PDO:: ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         } catch (Exception $ex) {

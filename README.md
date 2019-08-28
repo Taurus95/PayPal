@@ -4,7 +4,7 @@ MODULO PARA INTEGRAR CON PayPal
 ##############################
 ##############################
 
-Pantalla inicial para el flujo: "paypalPayment.php"
+Pantalla inicial para el flujo: "index.php"
 
 #################################################
 detalles que faltarian para un paso a produccion:
@@ -34,6 +34,8 @@ Instant payments notifications -> choose IPN -> cargar URL que apunte al archivo
 #################################################
 
 ###### PARA PRUEBAS TESTING #####################
+Crear cuentas de testing para tus necesidades...
+
 1. entrar a https://www.sandbox.paypal.com/ con cuenta falsa de vendedor
     user: andres.chacon-facilitator@vinculo.cl
     pass: vinculo.paypal

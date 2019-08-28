@@ -1,8 +1,11 @@
 <?php
 
-require('./env.php');
 require('PaypalIPN.php');
-require('./db/Connection.php');
+require('../db/Connection.php');
+include_once '../vendor/autoload.php';
+//cargamos variables de entorno
+$dotenv = Dotenv\Dotenv::create(__DIR__.'/../');
+$dotenv->load();
 
 // Set this to true to use the sandbox endpoint during testing:
 $enable_sandbox = true;
@@ -13,7 +16,7 @@ $send_confirmation_email = false;
 $confirmation_email_address = "My Name <my_email_address@gmail.com>";
 $from_email_address = "My Name <my_email_address@gmail.com>";
 // Set this to true to save a log file:
-$save_log_file = false;
+$save_log_file = true;
 $log_file_dir = __DIR__ . "/logs";
 // Here is some information on how to configure sendmail:
 // http://php.net/manual/en/function.mail.php#118210
@@ -48,10 +51,12 @@ $date = $year . "-" . $month . "-" . $day;
 $timestamp = $date . " " . $hour . ":" . $minute . ":" . $second . " " . $timezone;
 $dated_log_file_dir = $log_file_dir . "/" . $year . "/" . $month;
 $paypal_ipn_status = "VERIFICATION FAILED";
+
 if ($verified) {
     $paypal_ipn_status = "RECEIVER EMAIL MISMATCH";
     if ($receiver_email_found) {
         $paypal_ipn_status = "Completed Successfully";
+
         // Process IPN
         //saving the payment with the data of paypal
 

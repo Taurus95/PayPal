@@ -1,3 +1,5 @@
 env.php
 /db/Connection.php
 /logs
+.env
+vendor
